@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:color="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Add new subscriber</title>
+    <style>
+        body {
+            background-color: white;
+            font-family: Arial, Helvetica, sans-serif
+        }
+        h1   {color: crimson;}
+        label, span, legend   {
+            color: darkslategrey;
+            font-weight: bold
+        }
+        div.fe {
+            padding-top: 5px;
+            padding-right: 3px;
+            padding-bottom: 10px;
+            padding-left: 8px;
+        }
+        legend {
+            padding-top: 5px;
+            padding-right: 3px;
+            padding-bottom: 10px;
+            padding-left: 8px;
+        }
+        input[type=submit] {
+            background-color: dodgerblue;
+            border: none;
+            color: white;
+            font-weight: bold;
+            padding: 16px 32px;
+            text-decoration: none;
+            margin: 4px 2px;
+            cursor: pointer;
+            margin-left: 10px;
+            margin-top: 10px;
+        }
+       progress {
+            margin-left: 10px;
+            width: 166px;
+        }
+
+    </style>
+
+    <script>
+        function addSub(){
+            document.getElementById("submitProgress").hidden = false;
+            document.getElementById("emailin").value = "";
+            document.getElementById("submitProgress").hidden = true;
+            return false;
+        }
+    </script>
+</head>
+<body>
+
+<h1>Add Subscriber</h1>
+<form>
+<div class="fe" id="email">
+    <label for="email">Email address</label><b style="color: crimson">*</b><br/>
+    <input type="email" name="email" id="emailin" required>
+</div>
+
+<div class="fe" id="fname">
+    <label for="fname">First name</label><br/>
+    <input type=text name="fname" id="fnamein">
+</div>
+
+<div class="fe" id="lname">
+    <label for="lname">First name</label><br/>
+    <input type=text name="lname" id="lnamein">
+</div>
+
+<div class="fe" id="bday">
+    <span>Birthday</span><b style="color: crimson">*</b><br/>
+    <input type=number name="mm" id="mm" min="1" max="12" minlength="1" maxlength="2" width="2" required>&nbsp;/&nbsp;
+    <input type=number name="mm" id="dd" min="1" max="32" minlength="1" maxlength="2" width="2" required><br/>
+    <small>MM/DD</small>
+</div>
+
+<div class="fe" id="tags">
+    <fieldset>
+        <legend>Tags<b style="color: crimson">*</b></legend>
+        <input type="radio" name="tags" id="postal" value="0" required><label for="postal">Postal</label><br>
+        <input type="radio" name="tags" id="employee" value="0"><label for="employee">Employee</label><br>
+        <input type="radio" name="tags" id="event" value="0"><label for="event">Event</label><br>
+        <input type="radio" name="tags" id="online" value="0"><label for="online">Online</label><br>
+    </fieldset>
+</div>
+
+<div class="fe" id="perm">
+    <input type="checkbox" id="permission" name="permission">
+    <label for="permission">This person gave me permission to email them</label>
+</div>
+
+<div class="fe" id="issub">
+    <input type="checkbox" id="issubscriber" name="issubscriber">
+    <label for="issubscriber">This person is already a subscriber. Update their profile.</label>
+</div>
+
+<input type="submit" value="Add Subscriber"></input><br/>
+</form>
+<progress id="submitProgress" hidden></progress>
+
+</body>
+</html>
